@@ -374,6 +374,10 @@ class STM32_CAN {
     bool addToRingBuffer(RingbufferTypeDef &ring, const CAN_message_t &msg);
     bool removeFromRingBuffer(RingbufferTypeDef &ring, CAN_message_t &msg);
 
+    uint32_t GetTxMailboxesFreeLevel();
+    uint32_t GetError();
+    CAN_HandleTypeDef *GetCANHandle();
+
   protected:
     uint16_t sizeRxBuffer;
     uint16_t sizeTxBuffer;

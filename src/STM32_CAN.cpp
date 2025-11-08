@@ -1254,6 +1254,21 @@ void STM32_CAN::enableFIFO(bool status)
   (void) status;
 }
 
+uint32_t STM32_CAN::GetTxMailboxesFreeLevel()
+{
+  return HAL_CAN_GetTxMailboxesFreeLevel(&_can.handle);
+}
+
+uint32_t STM32_CAN::GetError()
+{
+  return HAL_CAN_GetError(&_can.handle);
+}
+
+CAN_HandleTypeDef* STM32_CAN::GetCANHandle()
+{
+  return &_can.handle;
+}
+
 /* Interrupt functions
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
